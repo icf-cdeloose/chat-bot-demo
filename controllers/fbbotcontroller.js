@@ -59,6 +59,16 @@ controller.hears(['speak', 'talk', 'audio'], 'message_received', function(bot, m
     bot.reply(message, createAudioMessage(url + 'audio/bot-speak.mp3'));
 });
 
+// User wants to see audio example
+controller.hears(['goodbye', 'good bye', 'bye'], 'message_received', function(bot, message) {
+    bot.reply(message, 'Goodbye, hope to talk with you again real soon!');
+});
+
+// User wants to see audio example
+controller.hears(['fuck', 'shit', 'asshole', 'ass hole'], 'message_received', function(bot, message) {
+    bot.reply(message, 'Does your mother know you talk like that?');
+});
+
 // User wants to see random comic
 controller.hears(['comic'], 'message_received', function(bot, message) {
     getComic(function(reply) {
